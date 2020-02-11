@@ -15,5 +15,5 @@ EXPOSE 8082 9092
 
 WORKDIR ${H2_HOME}
 
-COPY entrypoint.sh /entrypoint.sh
-ENTRYPOINT ["/entrypoint.sh"]
+ENTRYPOINT ["java", "-cp", "/opt/h2/bin/h2-1.4.200.jar", "org.h2.tools.Server", "-properties", "~/.h2.server.properties", "-baseDir", "/opt/h2/data", "-ifNotExists"]
+CMD ["-tcp", "-tcpAllowOthers", "-tcpPort", "9092"]
