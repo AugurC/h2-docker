@@ -9,7 +9,7 @@ RUN mkdir -p ${H2_DATA} \
     && unzip h2.zip -d /opt/ \
     && rm h2.zip
 
-COPY h2.server.properties /root/.h2.server.properties
+COPY conf/h2.server.properties /root/.h2.server.properties
 
 EXPOSE 8082 9092
 
